@@ -7,10 +7,8 @@ window.addEventListener("load", function() {
     html.innerHTML = voyant + html.innerHTML;
     updateIframe();
 });
-
 function updateIframe() {
     const voyantURL = "http://voyant-tools.org/tool/Contexts/?useReferer=true";
-
     console.log(`Voyant URL: ${voyantURL}`); // Log the URL for debugging
     document.getElementById('voyantIframe').src = voyantURL;
 }
