@@ -2,31 +2,24 @@ window.addEventListener("load", function() {
     let html = document.getElementById("main-content");
     let voyant = `
         <div id="voyantContainer">
-            <form id="voyantForm" onsubmit="updateIframe(event); return false;">
-                <label for="searchQuery">Search for a word:</label>
-                <input type="text" id="searchQuery" name="searchQuery" required>
-                <button type="submit">Search</button>
-            </form>
             <iframe id="voyantIframe"></iframe>
         </div>`;
     html.innerHTML = voyant + html.innerHTML;
+    updateIframe();
 });
-
-function updateIframe(event) {
-    event.preventDefault();  // Prevent form submission from refreshing the page
-    const searchQuery = document.getElementById('searchQuery').value.trim();
-    let corpusURL = '';
-    const fileName = file;
-    if (window.location.protocol === "file:") {
-         // For local file execution
-         const localPath = window.location.href.replace(/\/[^\/]*$/, '/');
-        corpusURL = localPath + encodeURIComponent(fileName);
-    } else {
-        // For hosted environment
-        const baseURL = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/');
-        corpusURL = `${baseURL}${encodeURIComponent(fileName)}`;
-   }
-    const voyantURL = `https://voyant-tools.org/?corpus=${encodeURIComponent(corpusURL)}#/?query=${encodeURIComponent(searchQuery)}`;
+function updateIframe() {
+    const voyantURL = `http://docs.voyant-tools.org/tool/Contexts/?corpus=4293bd8db1a531ab9b131bc720e1374e`;
+    if (file==="English-Home.html"){
+        voyantURL = `http://docs.voyant-tools.org/?corpus=4293bd8db1a531ab9b131bc720e1374e`;
+    } else if (file==="English-Convo1.html"){
+        voyantURL = `http://docs.voyant-tools.org/?corpus=f85e84f87f6c8bbdd9740c0915181b4e`;
+    } else if (file==="English-Convo2.html"){
+        voyantURL = `http://docs.voyant-tools.org/?corpus=617af5d82c590c986d6ed84d73082c7f`;
+    } else if (file==="English-Convo3.html"){
+        voyantURL = `http://docs.voyant-tools.org/?corpus=73c7edb47c19c288dab6fb993f374b01`;
+    } else if (file==="English-Convo4.html"){
+        voyantURL = `http://docs.voyant-tools.org/?corpus=b8caa63587bb441317e2962d5dacc64c`;
+    }
     console.log(`Voyant URL: ${voyantURL}`); // Log the URL for debugging
     document.getElementById('voyantIframe').src = voyantURL;
-    }
+}
