@@ -514,7 +514,8 @@ input{
   overflow: scroll;
   scale: 0.7;
   object-fit: contain;
-  width: 100vw;
+  width: 90vw;
+  height: 50vh;
 }
 .recording::-webkit-media-controls-panel{
   background-color: #00b8fd;
