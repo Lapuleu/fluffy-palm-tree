@@ -8,17 +8,17 @@ window.addEventListener("load", function() {
     updateIframe();
 });
 function updateIframe() {
-    const voyantURL = `http://docs.voyant-tools.org/tool/Contexts/?corpus=4293bd8db1a531ab9b131bc720e1374e`;
+    let voyantURL = `http://docs.voyant-tools.org/tool/Contexts/?corpus=4293bd8db1a531ab9b131bc720e1374e`;
     if (file==="English-Home.html"){
-        voyantURL = `http://docs.voyant-tools.org/?corpus=4293bd8db1a531ab9b131bc720e1374e`;
+        voyantURL = `http://docs.voyant-tools.org/tool/Contexts/?corpus=4293bd8db1a531ab9b131bc720e1374e`;
     } else if (file==="English-Convo1.html"){
-        voyantURL = `http://docs.voyant-tools.org/?corpus=f85e84f87f6c8bbdd9740c0915181b4e`;
+        voyantURL = `http://docs.voyant-tools.org/tool/Contexts/?corpus=f85e84f87f6c8bbdd9740c0915181b4e`;
     } else if (file==="English-Convo2.html"){
-        voyantURL = `http://docs.voyant-tools.org/?corpus=617af5d82c590c986d6ed84d73082c7f`;
+        voyantURL = `http://docs.voyant-tools.org/tool/Contexts/?corpus=617af5d82c590c986d6ed84d73082c7f`;
     } else if (file==="English-Convo3.html"){
-        voyantURL = `http://docs.voyant-tools.org/?corpus=73c7edb47c19c288dab6fb993f374b01`;
+        voyantURL = `http://docs.voyant-tools.org/tool/Contexts/?corpus=73c7edb47c19c288dab6fb993f374b01`;
     } else if (file==="English-Convo4.html"){
-        voyantURL = `http://docs.voyant-tools.org/?corpus=b8caa63587bb441317e2962d5dacc64c`;
+        voyantURL = `http://docs.voyant-tools.org/tool/Contexts/?corpus=b8caa63587bb441317e2962d5dacc64c`;
     }
     console.log(`Voyant URL: ${voyantURL}`); // Log the URL for debugging
     document.getElementById('voyantIframe').src = voyantURL;
