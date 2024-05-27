@@ -497,24 +497,27 @@ input{
 .playbar{
   width: 35%;
 }
-#voyantContainer{
+/*#voyantContainer{
+  z-index:1000;
+  width: 10vw;
+  height: 10vh;
+  position: relative;
   display: flex;
-  z-index: 1000;
-  position: sticky;
-  width: fit-content;
   flex-wrap: wrap;
-  align-self: center;
-  align-content: center;
-}
+  justify-content: center;
+  pointer-events: none;
+}*/
 #voyantIframe{
-  border:none;
   z-index: 1000;
   position: sticky;
-  align-self: center;
-  overflow: scroll;
-  scale: 0.7;
-  object-fit: contain;
-  width: 90vw;
+  scale: 0.3;
+  display: flex;
+  margin: -5vh -5vw -10vh -5vw;
+}
+#voyantIframe:hover{
+  margin-left: 5vw;
+  scale: 1;
+  width: 70vw;
   height: 50vh;
 }
 .recording::-webkit-media-controls-panel{
@@ -681,6 +684,9 @@ p .footerLink:hover{
   }
   #toggle-collection{
     margin-top:150px;
+  }
+  #voyantContainer{
+    max-width: 15vw;
   }
 }
 
