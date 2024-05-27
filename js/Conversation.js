@@ -176,8 +176,7 @@ window.addEventListener("load", function(e) {
         }
     }, 1);
     var r = document.querySelector(':root');
-    r.style.setProperty("--height", (getComputedStyle(r)["height"]));
-});
+    r.style.setProperty("--height", (getComputedStyle(r)["height"]));});
 function togglePlayback() {
    if (audio.paused) {
         audio.play();
